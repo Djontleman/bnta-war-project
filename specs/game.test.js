@@ -1,5 +1,6 @@
 const Game = require("../src/game.js");
 const Player = require("../src/player.js");
+const Card = require("../src/card.js");
 
 test("Player 1's card is greater than player 2's", function(){
     const player1 = new Player(1);
@@ -21,5 +22,5 @@ test("Player 1.s card is less than player 2's card", function(){
     player2.currentCard = 10
     const game = new Game(player1, player2);
     const comparison = game.compare();
-    expect(comparison).toBe("Player 2 wins!");
+    expect(comparison).toBe("Player 2 wins");
 })
