@@ -1,6 +1,8 @@
+const Card = require("../src/card.js");
 const Game = function(player1, player2){
     this.player1 = player1;
     this.player2 = player2;
+    this.deck = [];
 }
 
 Game.prototype.compare = function(){
@@ -13,6 +15,26 @@ Game.prototype.compare = function(){
         return "Player 2 wins";
     }
 
+}
+
+Game.prototype.buildDeck = function(){
+    for (j=0; j<4; j++){
+        for (i=1; i<14; i++){
+            this.deck.push(new Card(i));
+        }
+    }
+}
+
+Game.prototype.shuffle = function(){
+    const newDeck = this.deck;
+    const shuffledDeck = [];
+    for (i in this.deck){
+        let randomNum = Math.floor(Math.random()*newDeck.length);
+        let randomCard = newDeck[randomNum];
+        newDeck.splice(randomNum,1);
+        shuffledDeck.push(randomCard);
+    }
+    return shuffledDeck;
 }
 
 module.exports = Game;

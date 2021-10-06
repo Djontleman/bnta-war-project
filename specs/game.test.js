@@ -24,3 +24,10 @@ test("Player 1.s card is less than player 2's card", function(){
     const comparison = game.compare();
     expect(comparison).toBe("Player 2 wins");
 })
+
+test("Deck is of length 52", function() {
+    const game = new Game();
+    game.buildDeck();
+    const deckLength = game.deck.length;
+    expect(deckLength).toBe(52);
+})
