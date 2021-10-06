@@ -28,7 +28,7 @@ Game.prototype.buildDeck = function(){
 Game.prototype.shuffle = function(){
     const newDeck = this.deck;
     const shuffledDeck = [];
-    for (i in this.deck){
+    while (newDeck.length>0){
         let randomNum = Math.floor(Math.random()*newDeck.length);
         let randomCard = newDeck[randomNum];
         newDeck.splice(randomNum,1);

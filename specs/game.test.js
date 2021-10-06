@@ -31,3 +31,11 @@ test("Deck is of length 52", function() {
     const deckLength = game.deck.length;
     expect(deckLength).toBe(52);
 })
+
+test("Deck is of length 52", function() {
+    const game = new Game();
+    game.buildDeck();
+    const shuffled = game.shuffle();
+    const shuffledDeckLength = shuffled.length;
+    expect(shuffledDeckLength).toBe(52);
+})
