@@ -1,4 +1,6 @@
 const Card = require("../src/card.js");
+const Player = require("../src/player.js");
+
 const Game = function(player1, player2){
     this.player1 = player1;
     this.player2 = player2;
@@ -35,6 +37,13 @@ Game.prototype.shuffle = function(){
         shuffledDeck.push(randomCard);
     }
     return shuffledDeck;
+}
+
+Game.prototype.deal = function(){
+    const shuffled = this.shuffle();
+    this.player1.currentDeck = shuffled.slice(0,26);
+    this.player2.currentDeck = shuffled.slice(26);
+    
 }
 
 module.exports = Game;

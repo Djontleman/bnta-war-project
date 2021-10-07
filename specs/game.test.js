@@ -39,3 +39,25 @@ test("Deck is of length 52", function() {
     const shuffledDeckLength = shuffled.length;
     expect(shuffledDeckLength).toBe(52);
 })
+
+test("Check player 1 is dealt 26 cards", function() {
+    const player_1 = new Player(1);
+    const player_2 = new Player(2);
+    const game = new Game(player_1, player_2);
+    game.buildDeck();
+    game.deal();
+    const player1DeckLength = game.player1.currentDeck.length;
+    expect(player1DeckLength).toBe(26);
+    
+})
+
+test("Check player 2 is dealt 26 cards", function() {
+    const player_1 = new Player(1);
+    const player_2 = new Player(2);
+    const game = new Game(player_1, player_2);
+    game.buildDeck();
+    game.deal();
+    const player2DeckLength = game.player2.currentDeck.length;
+    expect(player2DeckLength).toBe(26);
+    
+})
