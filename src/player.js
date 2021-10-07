@@ -12,7 +12,7 @@ const Player = function(playerNumber) {
 }
 
 Player.prototype.assignCard = function(){
-    this.currentCard = new Card(Math.floor(Math.random()*13 + 1));
+    this.currentCard = this.currentDeck[0];
     return this.currentCard.value;
 }
 
